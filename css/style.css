@@ -4,13 +4,14 @@
     padding: 0;
 }
 
-body{
-
+header{
+    background-color: #eaeaea;
+    height: 4.375rem;
 }
 
 .photo{
-    width: 3.125rem;
-    height: 3.125rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .photo img{
@@ -19,6 +20,42 @@ body{
     border-radius: 50%;
 }
 
+#left-header span{
+    flex-grow: 1;
+}
+
 #left-header{
-    /* align-items: center; */
+    border-right: .0625rem solid #d6d6d6;
+    width: 30%;
+}
+
+#right-header{
+    width: 70%;
+}
+
+#info{
+    flex-grow: 1;
+}
+
+#left-menu{
+    width: 30%;
+}
+
+main{
+    height: calc(100vh - 4.375rem);
+}
+
+.notification{
+    background-color: #8edafc;
+}
+
+.whitecircle{
+    padding: .3125rem;
+    background-color: white;
+    border-radius: 50%;
+    color: #8edafc;
+}
+
+#searchbar{
+    background-color: #fafafa;
 }

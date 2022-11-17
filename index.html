@@ -20,34 +20,74 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header class="d-flex">
             <div id="left-header" class="d-flex align-items-center">
                 <div class="photo mx-2 my-2">
                     <img src="img/avatar_io.jpg" alt="">
                 </div>
                 <span>Nicolò</span>
                 <div>
-                    <i class="fa-regular fa-rotate-right"></i>
+                    <i class="fa-solid fa-rotate mx-2"></i>
                 </div>
                 <div>
-                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-message mx-2"></i>
                 </div>
                 <div>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
                 </div>
             </div>
-            <div id="right-header row">
-                <div class="photo">
-
+            <div id="right-header" class="d-flex align-items-center">
+                <div class="photo mx-2 my-2">
+                    <img :src ="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">
                 </div>
-                <div id="info">
-                    <span class="name"></span>
-                    <span></span>
+                <div id="info" class="mx-2 my-2">
+                    <span class="name d-block">{{contacts[activeContact].name}}</span>
+                    <span>Ultimo accesso ore 12.00</span>
+                </div>
+                <div id="header-icons" class="d-flex mx-2 my-2">
+                    <div>
+                        <i class="fa-solid fa-rotate mx-2"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-message mx-2"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
+                    </div>
                 </div>
             </div>
         </header>
-        <main>
-            
+        <main class="d-flex">
+            <div id="left-menu">
+                <div class="d-flex notification align-items-center py-2">
+                    <div class="photo whitecircle d-flex justify-content-center align-items-center mx-2 ">
+                        <span v-if="notifications"><i class="fa-solid fa-bell"></i></span>
+                        <span v-else><i class="fa-solid fa-bell-slash"></i></span>
+                    </div>
+                    <div>
+                        <span class ="d-block" v-if="!notifications">Ricevi notifiche di nuovi messaggi</span>
+                        <span class ="d-block" v-else>Non ricevere più le notifiche</span>
+                        <span v-if="!notifications">Attiva notifiche desktop</span>
+                        <span v-else>Disattiva notifiche desktop</span>
+                    </div>
+                </div>
+                <div id="searchbar" class="d-flex py-2">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass px-3 bg-white "></i>
+                    </div>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div id="chat" class="d-flex flex-column">
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </div>
         </main>
     </div>
     <!-- Bootstrap js -->

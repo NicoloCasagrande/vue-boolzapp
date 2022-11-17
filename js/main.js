@@ -3,6 +3,8 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        activeContact: 0,
+        notifications: false,
         contacts: [
             {
                 name: 'Michele',
@@ -167,5 +169,13 @@ const { createApp } = Vue
             }
         ]
       }
+    }, 
+    methods: {
+        generateImg(){
+            for (let index = 0; index < contacts.length; index++) {
+                const element = contacts[index];
+                
+            }
+        }
     }
   }).mount('#app')
