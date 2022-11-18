@@ -184,10 +184,23 @@ const { createApp } = Vue
                 }
                 this.contacts[this.activeContact].messages.push(newMessage);
                 this.chatMessage = '';
+                setTimeout(this.onSent, 10000);
             }else{
                 alert('Non puoi inviare messaggi vuoti');
             }
             
+        }, 
+        onSent(){
+            axios.get('https://api.chucknorris.io/jokes/random')
+            .then((response) => {
+                const receivedMessage = {
+                    date: new Date(),
+                    message: response.data.value,
+                    status: 'received'
+                }
+
+                this.contacts[this.activeContact].messages.push(receivedMessage);
+            })
         }
     }
   }).mount('#app')
