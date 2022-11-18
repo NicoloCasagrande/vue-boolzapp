@@ -5,6 +5,7 @@ const { createApp } = Vue
       return {
         activeContact: 0,
         notifications: false,
+        chatMessage: '',
         contacts: [
             {
                 name: 'Michele',
@@ -173,6 +174,20 @@ const { createApp } = Vue
     methods: {
         activeChat(index){
             this.activeContact = index;
+        }, 
+        onEnter(){
+            if(this.chatMessage !== ''){
+                const newMessage = {
+                    date: new Date(),
+                    message: this.chatMessage,
+                    status: 'sent'
+                }
+                this.contacts[this.activeContact].messages.push(newMessage);
+                this.chatMessage = '';
+            }else{
+                alert('Non puoi inviare messaggi vuoti');
+            }
+            
         }
     }
   }).mount('#app')

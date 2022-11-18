@@ -65,10 +65,10 @@
                         <span v-else><i class="fa-solid fa-bell-slash"></i></span>
                     </div>
                     <div>
-                        <span class ="d-block" v-if="!notifications">Ricevi notifiche di nuovi messaggi</span>
-                        <span class ="d-block" v-else>Non ricevere più le notifiche</span>
-                        <span v-if="!notifications">Attiva notifiche desktop</span>
-                        <span v-else>Disattiva notifiche desktop</span>
+                        <span class ="d-block little-text" v-if="!notifications">Ricevi notifiche di nuovi messaggi</span>
+                        <span class ="d-block little-text" v-else>Non ricevere più le notifiche</span>
+                        <span class ="little-text" v-if="!notifications">Attiva notifiche desktop</span>
+                        <span class ="little-text" v-else>Disattiva notifiche desktop</span>
                     </div>
                 </div>
                 <div id="searchbar" class="d-flex p-2">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="chat-bar d-flex align-items-center">
                     <i class="fa-regular fa-face-smile final-icons mx-3"></i>
-                    <input type="text">
+                    <input v-model="chatMessage" type="text" @keyup.enter="onEnter">
                     <i class="fa-solid fa-microphone final-icons mx-3"></i>
                 </div>
             </div>
