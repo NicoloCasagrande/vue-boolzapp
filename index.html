@@ -19,7 +19,7 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="container">
         <header class="d-flex">
             <div id="left-header" class="d-flex align-items-center">
                 <div class="photo mx-2 my-2">
@@ -71,20 +71,33 @@
                         <span v-else>Disattiva notifiche desktop</span>
                     </div>
                 </div>
-                <div id="searchbar" class="d-flex py-2">
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass px-3 bg-white "></i>
+                <div id="searchbar" class="d-flex p-2">
+                    <div id="search-glass" class="d-flex justify-content-center align-items-center px-3">
+                        <i class="fa-solid fa-magnifying-glass bg-white"></i>
                     </div>
-                    <div>
+                    <div id="searchbar__input">
                         <input type="text">
+                    </div>
+                </div>
+                <div id="contacts-chat">
+                    <div v-for="(contact, index) in contacts" class="name-chat d-flex align-items-center" :class="index === activeContact ? 'active' : 'null'" @click="activeChat(index)">
+                        <div class="photo">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                        </div>
+                        <div class="info-chat">
+                            <h6 class="d-block">{{contact.name}}</h6>
+                            <span class="nowrap little-text">{{contact.messages[contact.messages.length -1].message}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="chat" class="d-flex flex-column">
-                <div>
-
+                <div class="display-chat d-flex flex-column">
+                    <div class="py-2 mx-5 my-3 d-flex" v-for="message in contacts[activeContact].messages" :class="message.status === 'sent' ? message.status : ''">
+                        <span class="message">{{message.message}}</span>
+                    </div>
                 </div>
-                <div>
+                <div class="chat-bar">
 
                 </div>
             </div>

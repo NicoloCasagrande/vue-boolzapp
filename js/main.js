@@ -171,11 +171,8 @@ const { createApp } = Vue
       }
     }, 
     methods: {
-        generateImg(){
-            for (let index = 0; index < contacts.length; index++) {
-                const element = contacts[index];
-                
-            }
+        activeChat(index){
+            this.activeContact = index;
         }
     }
   }).mount('#app')

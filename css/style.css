@@ -4,9 +4,20 @@
     padding: 0;
 }
 
+body{
+    background: linear-gradient(to bottom, #009688 20%, #dcdbd2 20%);
+    padding: 1.875rem;
+}
+
 header{
     background-color: #eaeaea;
     height: 4.375rem;
+}
+
+.container{
+    max-width: 62.5rem;
+    height: 100vh;
+    margin: auto;
 }
 
 .photo{
@@ -59,3 +70,78 @@ main{
 #searchbar{
     background-color: #fafafa;
 }
+
+#searchbar__input{
+    width: 100%;
+}
+
+#searchbar__input input{
+    width: 100%;
+    border: none;
+}
+
+#search-glass{
+    background-color: white;
+}
+
+.name-chat{
+    height: 4.375rem;
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+}
+
+.active{
+    background-color: #e9ebeb;
+}
+
+#chat{
+    background-image: url('../img/mine.jpg');
+    overflow-y: auto;
+    width: 70%;
+}
+
+#left-menu{
+    height: 100%;
+    overflow-y: hidden;
+    background-color: white;
+}
+
+#contacts-chat{
+    overflow-y: auto;
+}
+
+.chat-bar{
+    background-color: white;
+    height: 3.125rem;
+}
+
+.display-chat{
+    flex-grow: 1;
+}
+
+.message{
+    border-radius: .625rem;
+    background-color: white;
+    padding: .9375rem;
+}
+
+.sent{
+    justify-content: flex-end;
+}
+
+.sent span{
+    background-color: greenyellow;
+}
+
+.nowrap{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.little-text{
+    font-size: .8125rem;
+}
+
+
+
