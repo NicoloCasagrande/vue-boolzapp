@@ -112,7 +112,7 @@ main{
 }
 
 .chat-bar{
-    background-color: white;
+    background-color: #eaeaea;
     height: 3.125rem;
 }
 
@@ -135,12 +135,25 @@ main{
 }
 
 .nowrap{
+    white-space: normal;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .little-text{
     font-size: .8125rem;
+}
+
+h6{
+    margin: .3125rem 0 0 0;
+}
+
+.final-icons{
+    font-size: 1.25rem;
+}
+
+.chat-bar input{
+    flex-grow: 1;
+    height: 80%;
 }
 
 

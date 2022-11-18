@@ -80,8 +80,8 @@
                     </div>
                 </div>
                 <div id="contacts-chat">
-                    <div v-for="(contact, index) in contacts" class="name-chat d-flex align-items-center" :class="index === activeContact ? 'active' : 'null'" @click="activeChat(index)">
-                        <div class="photo">
+                    <div v-for="(contact, index) in contacts" class="name-chat d-flex" :class="index === activeContact ? 'active' : 'null'" @click="activeChat(index)">
+                        <div class="photo align-self-center mx-2">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                         </div>
                         <div class="info-chat">
@@ -97,8 +97,10 @@
                         <span class="message">{{message.message}}</span>
                     </div>
                 </div>
-                <div class="chat-bar">
-
+                <div class="chat-bar d-flex align-items-center">
+                    <i class="fa-regular fa-face-smile final-icons mx-3"></i>
+                    <input type="text">
+                    <i class="fa-solid fa-microphone final-icons mx-3"></i>
                 </div>
             </div>
         </main>
