@@ -76,11 +76,11 @@
                         <i class="fa-solid fa-magnifying-glass bg-white"></i>
                     </div>
                     <div id="searchbar__input">
-                        <input type="text">
+                        <input v-model="searchWord" type="text" @keyup.enter="searchInput">
                     </div>
                 </div>
                 <div id="contacts-chat">
-                    <div v-for="(contact, index) in contacts" class="name-chat d-flex" :class="index === activeContact ? 'active' : 'null'" @click="activeChat(index)">
+                    <div v-for="(contact, index) in contacts" class="name-chat d-flex" :class="index === activeContact ? 'active' : 'null'" @click="activeChat(index)" :class="contact.visible === false ? 'd-none' : 'null'" v-show="contact.visible">
                         <div class="photo align-self-center mx-2">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                         </div>
@@ -95,6 +95,13 @@
                 <div class="display-chat d-flex flex-column">
                     <div class="py-2 mx-5 my-3 d-flex" v-for="message in contacts[activeContact].messages" :class="message.status === 'sent' ? message.status : ''">
                         <span class="message">{{message.message}}</span>
+                    </div>
+                    <div id="dropdown-message">
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          </ul>
                     </div>
                 </div>
                 <div class="chat-bar d-flex align-items-center">

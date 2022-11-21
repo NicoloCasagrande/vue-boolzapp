@@ -3,6 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        searchWord: '',
         activeContact: 0,
         notifications: false,
         chatMessage: '',
@@ -201,6 +202,21 @@ const { createApp } = Vue
 
                 this.contacts[this.activeContact].messages.push(receivedMessage);
             })
+        }, 
+        searchInput(){
+            console.log(this.searchWord)
+            if(this.searchWord === ''){
+                alert('Devi inserire un nome per eseguire la ricerca');
+            }else{
+                for (let i = 0; i < this.contacts.length; i++) {
+                    let element = this.contacts[i].name;
+                    element = element.toLowerCase();
+                    if(!element.includes(this.searchWord)){
+                        this.contacts[i].visible = false;
+                    }
+                }
+                this.searchWord = '';
+            }
         }
     }
   }).mount('#app')

@@ -16,8 +16,10 @@ header{
 
 .container{
     max-width: 62.5rem;
-    height: 100vh;
     margin: auto;
+    overflow-y: auto;
+    position: relative;
+    height: 100vh;
 }
 
 .photo{
@@ -50,10 +52,6 @@ header{
 
 #left-menu{
     width: 30%;
-}
-
-main{
-    height: calc(100vh - 4.375rem);
 }
 
 .notification{
@@ -102,7 +100,7 @@ main{
 }
 
 #left-menu{
-    height: 100%;
+    height: calc(100% - 6.25rem);
     overflow-y: auto;
     background-color: white;
 }
@@ -110,6 +108,8 @@ main{
 .chat-bar{
     background-color: #eaeaea;
     height: 3.125rem;
+    position: sticky;
+    bottom: 0;
 }
 
 .display-chat{
@@ -150,6 +150,15 @@ h6{
 .chat-bar input{
     flex-grow: 1;
     height: 80%;
+}
+
+main{
+    height: calc(100% - 8.125rem);
+    background-color: white;
+}
+
+.ms-d-none{
+    display: none;
 }
 
 
