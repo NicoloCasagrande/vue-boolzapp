@@ -1,17 +1,16 @@
+/* RESET */
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* COMMONS */
+
 body{
     background: linear-gradient(to bottom, #009688 20%, #dcdbd2 20%);
     padding: 1.875rem;
-}
-
-header{
-    background-color: #eaeaea;
-    height: 4.375rem;
 }
 
 .container{
@@ -33,6 +32,13 @@ header{
     border-radius: 50%;
 }
 
+/* HEADER */
+
+header{
+    background-color: #eaeaea;
+    height: 4.375rem;
+}
+
 #left-header span{
     flex-grow: 1;
 }
@@ -48,6 +54,17 @@ header{
 
 #info{
     flex-grow: 1;
+}
+
+/* MAIN */
+
+main{
+    height: calc(100% - 8.125rem);
+    background-color: white;
+}
+
+.ms-d-none{
+    display: none;
 }
 
 #left-menu{
@@ -152,15 +169,6 @@ h6{
 .chat-bar input{
     flex-grow: 1;
     height: 80%;
-}
-
-main{
-    height: calc(100% - 8.125rem);
-    background-color: white;
-}
-
-.ms-d-none{
-    display: none;
 }
 
 
