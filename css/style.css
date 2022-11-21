@@ -120,14 +120,16 @@ header{
     border-radius: .625rem;
     background-color: white;
     padding: .9375rem;
+    color: black;
 }
 
 .sent{
     justify-content: flex-end;
 }
 
-.sent span{
+.sent > a{
     background-color: greenyellow;
+    color: black;
 }
 
 .nowrap{

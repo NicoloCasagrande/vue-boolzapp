@@ -93,16 +93,14 @@
             </div>
             <div id="chat" class="d-flex flex-column">
                 <div class="display-chat d-flex flex-column">
-                    <div class="py-2 mx-5 my-3 d-flex" v-for="message in contacts[activeContact].messages" :class="message.status === 'sent' ? message.status : ''">
-                        <span class="message">{{message.message}}</span>
-                    </div>
-                    <div id="dropdown-message">
+                    <div class="dropdown py-2 mx-5 my-3 d-flex" v-for="(message, index) in contacts[activeContact].messages" :class="message.status === 'sent' ? message.status : ''">
+                        <a class="btn btn-secondary message" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{message.message}}
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          </ul>
-                    </div>
+                          <li><a class="dropdown-item" href="#" @click="removeMessage(index)">Elimina messaggio</a></li>
+                        </ul>
+                      </div>
                 </div>
                 <div class="chat-bar d-flex align-items-center">
                     <i class="fa-regular fa-face-smile final-icons m-3"></i>
@@ -121,6 +119,7 @@
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- /Vue -->
+    <script src="vanillaEmojiPicker.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

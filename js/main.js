@@ -217,6 +217,10 @@ const { createApp } = Vue
                 }
                 this.searchWord = '';
             }
+        },
+        removeMessage(index){
+            console.log(index);
+            this.contacts[this.activeContact].messages.splice(index, 1);
         }
     }
   }).mount('#app')
