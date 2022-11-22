@@ -221,6 +221,14 @@ const { createApp } = Vue
         removeMessage(index){
             console.log(index);
             this.contacts[this.activeContact].messages.splice(index, 1);
+        },
+        notificationChange(){
+            if(this.notifications === true){
+                this.notifications = false;
+            }else{
+                this.notifications = true;
+            }
+            
         }
     }
   }).mount('#app')

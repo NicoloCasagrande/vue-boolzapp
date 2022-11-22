@@ -60,7 +60,7 @@
         <main class="d-flex">
             <div id="left-menu">
                 <div class="d-flex notification align-items-center py-2">
-                    <div class="photo whitecircle d-flex justify-content-center align-items-center mx-2 ">
+                    <div class="photo whitecircle d-flex justify-content-center align-items-center mx-2" @click="notificationChange">
                         <span v-if="notifications"><i class="fa-solid fa-bell"></i></span>
                         <span v-else><i class="fa-solid fa-bell-slash"></i></span>
                     </div>
